@@ -2,3 +2,6 @@
 /node_modules/*
 /vendor/*
 .env
+.lock
+.env.*
+package-lock.json
