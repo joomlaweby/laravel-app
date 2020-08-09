@@ -1,2 +1,2 @@
 ## Laravel
-Demo laravel application
+Demo laravel application. Nobody knows, what it does.
