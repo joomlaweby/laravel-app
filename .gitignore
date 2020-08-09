@@ -5,3 +5,4 @@
 *.lock
 .env.*
 package-lock.json
+logs/
