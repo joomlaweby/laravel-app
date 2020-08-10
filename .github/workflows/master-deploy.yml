@@ -30,3 +30,14 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+      # Runs deploy
+    - name: Deploy and build gws application
+      uses: appleboy/ssh-action@master
+      with:
+        host: shellserver-2.websupport.sk
+        username: uid56720
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd joomla-webstranky.sk/sub/laravel
+          echo "success"
