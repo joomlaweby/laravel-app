@@ -8,7 +8,7 @@
 
     <ul>
         @foreach($posts as $post)
-            <li>{{$post}}</li>
+            <li><h3>{{$post->title}}</h3></li>
         @endforeach
     </ul>
 
