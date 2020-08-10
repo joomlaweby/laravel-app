@@ -40,4 +40,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd joomla-webstranky.sk/sub/laravel
-          echo "success"
+          git checkout --force master
+          git pull origin master
+          npm install
+          npm run production
