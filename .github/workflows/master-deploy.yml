@@ -42,5 +42,6 @@ jobs:
           cd joomla-webstranky.sk/sub/laravel
           git checkout --force master
           git pull origin master
+          composer install
           npm install
           npm run production
