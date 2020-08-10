@@ -3,7 +3,7 @@
 @section('content')
 <div class="content">
     <div class="title m-b-md">
-        {{$title}}
+        <h1>{{$title}}</h1>
     </div>
 
     <ul>
@@ -12,10 +12,5 @@
         @endforeach
     </ul>
 
-    <div class="links">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </div>
 </div>
 @endsection
