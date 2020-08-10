@@ -3,7 +3,7 @@
 /vendor/*
 .env
 *.lock
-.env.*
+.env
 package-lock.json
 logs/
 public/css/
