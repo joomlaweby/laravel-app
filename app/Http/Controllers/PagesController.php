@@ -20,7 +20,12 @@ class PagesController extends Controller
 
     function home() {
         return view('welcome', [
-            'title' => 'Welcome'
+            'title' => 'Welcome',
+            'posts' => [
+                'Post 1',
+                'Post 2',
+                'Post 3'
+            ]
         ]);
     }
 }

@@ -84,6 +84,12 @@
                     {{$title}}
                 </div>
 
+                <ul>
+                    @foreach($posts as $post)
+                        <li>{{$post}}</li>
+                    @endforeach
+                </ul>
+
                 <div class="links">
                     <a href="/">Home</a>
                     <a href="/about">About</a>
