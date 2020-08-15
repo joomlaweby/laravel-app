@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post mb-5">
     <header>
         <h3><a href="#">{{$post->title}}</a></h3>
     </header>
