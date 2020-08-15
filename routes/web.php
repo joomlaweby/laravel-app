@@ -24,3 +24,5 @@ Route::get('/contact', 'PagesController@contact');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/userprofile', 'UserController@profile')->name('Profile');
+
+Route::resource('articles', 'ArticleController');
