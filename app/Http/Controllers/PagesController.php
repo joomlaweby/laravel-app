@@ -22,7 +22,7 @@ class PagesController extends Controller
     function home() {
         return view('welcome', [
             'title' => 'Welcome',
-            'posts' => Article::latest('id')->get()
+            'posts' => Article::latest('id')->limit(5)->get()
         ]);
     }
 }
