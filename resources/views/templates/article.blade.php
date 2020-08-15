@@ -7,6 +7,7 @@
     </div>
     <footer class="meta">
         <h4>{{$post->user->name}}</h4>
+        @<strong>{{$post->comments->count()}} Comments</strong>
     </footer>
 </div>
 
