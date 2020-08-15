@@ -6,13 +6,13 @@
             <h1>{{$title}}</h1>
         </div>
 
-        <ul>
+        <ol class="posts">
             @foreach($posts as $post)
                 <li>
                     @include('templates/article')
                 </li>
             @endforeach
-        </ul>
+        </ol>
 
     </div>
 @endsection
