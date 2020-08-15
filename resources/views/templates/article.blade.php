@@ -7,7 +7,7 @@
     </div>
     <footer class="meta">
         <h4>{{$post->user->name}}</h4>
-        <strong>{{$post->comments->count()}} Comments</strong>
+        <strong>{{$post->comments->count()}} {{ str_plural('comment' , $post->comments->count()) }}</strong>
     </footer>
 </div>
 
