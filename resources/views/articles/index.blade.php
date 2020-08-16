@@ -7,7 +7,7 @@
         </div>
 
         <ol class="posts">
-            @foreach($posts as $post)
+            @foreach($articles as $article)
                 <li>
                     @include('articles.article')
                 </li>
