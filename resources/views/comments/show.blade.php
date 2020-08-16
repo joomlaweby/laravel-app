@@ -7,7 +7,7 @@
             <strong>{{ $comment->user->name }}</strong>
         </a>
         <time class="">
-            {{ $comment->created_at }}
+            {{ $comment->created_at->format('d/m/Y') }}
         </time>
     </div>
 </article>
