@@ -38,15 +38,12 @@ class ArticleController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Article  $article
-     * @return \Illuminate\Http\Response
-     */
     public function show(Article $article)
     {
-        return $article;
+        return view('articles.show', [
+            'title' => 'Welcome',
+            'article' => $article
+        ]);
     }
 
     /**
