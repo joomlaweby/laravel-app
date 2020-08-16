@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('uikit');
 
 window.Vue = require('vue');
 
