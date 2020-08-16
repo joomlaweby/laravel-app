@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return Article::latest('id')->limit(5)->get();
+        return view('welcome', [
+            'title' => 'Welcome',
+            'posts' => Article::latest('id')->limit(5)->get()
+        ]);
+
     }
 
     /**
