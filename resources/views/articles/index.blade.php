@@ -7,9 +7,9 @@
         </div>
 
         <ol class="posts">
-            @foreach($posts as $post)
+            @foreach($articles as $article)
                 <li>
-                    @include('templates/article')
+                    @include('articles.article', [ 'type' => 'listing'])
                 </li>
             @endforeach
         </ol>

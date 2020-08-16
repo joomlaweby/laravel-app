@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return Article::latest('id')->limit(5)->get();
+        return view('articles.index', [
+            'title' => 'Welcome',
+            'articles' => Article::latest('id')->limit(5)->get()
+        ]);
+
     }
 
     /**
@@ -38,15 +38,12 @@ class ArticleController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Article  $article
-     * @return \Illuminate\Http\Response
-     */
     public function show(Article $article)
     {
-        return $article;
+        return view('articles.show', [
+            'title' => 'Welcome',
+            'article' => $article
+        ]);
     }
 
     /**
