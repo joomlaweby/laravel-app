@@ -9,7 +9,7 @@
         <ol class="posts">
             @foreach($posts as $post)
                 <li>
-                    @include('templates/article')
+                    @include('articles.article')
                 </li>
             @endforeach
         </ol>

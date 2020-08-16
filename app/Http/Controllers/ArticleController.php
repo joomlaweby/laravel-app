@@ -10,7 +10,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        return view('welcome', [
+        return view('articles.blog', [
             'title' => 'Welcome',
             'posts' => Article::latest('id')->limit(5)->get()
         ]);
