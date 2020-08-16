@@ -6,8 +6,9 @@
             <h1>{{$title}}</h1>
         </div>
 
-        <div class="posts">
+        <div class="post">
             @include('articles.article', [ 'type' => 'detail'])
+            @include('comments.index')
         </div>
 
     </div>
