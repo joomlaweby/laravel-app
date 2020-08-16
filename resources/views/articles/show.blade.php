@@ -7,7 +7,7 @@
         </div>
 
         <div class="posts">
-            @include('articles.article')
+            @include('articles.article', [ 'type' => 'detail'])
         </div>
 
     </div>
