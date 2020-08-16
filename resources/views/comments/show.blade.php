@@ -6,7 +6,7 @@
         <a href="/users/{{ $comment->user->id }}" class="author">
             <strong>{{ $comment->user->name }}</strong>
         </a>
-        <time class="">
+        <time class="text-muted">
             {{ $comment->created_at->format('d/m/Y') }}
         </time>
     </div>
