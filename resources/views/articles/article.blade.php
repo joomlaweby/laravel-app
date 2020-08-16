@@ -1,6 +1,6 @@
 <div class="article mb-5">
     <header>
-        <h2><a href="#">{{$article->title}}</a></h2>
+        <h2><a href="/articles/{{ $article->id }}">{{$article->title}}</a></h2>
     </header>
     <div class="content">
         <p>{{$article->text}}</p>
