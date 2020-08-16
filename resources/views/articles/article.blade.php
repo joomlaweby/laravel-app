@@ -1,5 +1,4 @@
 <div class="card mb-5">
-    <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
         <h2 class="card-title"><a href="/articles/{{ $article->id }}">{{$article->title}}</a></h2>
         <p class="card-text">{{$article->text}}</p>
