@@ -17,12 +17,14 @@ Auth::routes();
 
 Route::get('/', 'ArticleController@index');
 
-Route::get('/about', 'PagesController@about');
+Route::get('/about', 'PagesController@about')->name('about');
 
-Route::get('/contact', 'PagesController@contact');
+Route::get('/contact', 'PagesController@contact')->name('contact');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/userprofile', 'UserController@profile')->name('Profile');
 
 Route::resource('articles', 'ArticleController');
+
+Route::resource('comments', 'CommentController');
