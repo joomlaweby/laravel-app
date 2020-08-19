@@ -3,7 +3,7 @@
         @include('comments.create')
     @endauth
     <ol class="comment-list">
-        @foreach($article->comments->reverse() as $comment)
+        @foreach($article->comments as $comment)
             <li>
                 @include('comments.show')
             </li>

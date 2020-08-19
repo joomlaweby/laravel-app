@@ -1,3 +1,4 @@
+@include('forms.errors')
 <form action="/comments" method="POST" class="">
     @csrf
     <label>Comment</label>

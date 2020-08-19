@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -35,6 +45,12 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'text' => 'required',
+                'article_id' => 'required|integer|exists:articles,id'
+            ]
+        );
         auth()->user()->comments()->create(
             $request->all()
         );
