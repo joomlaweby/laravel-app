@@ -38,6 +38,8 @@ class CommentController extends Controller
         Comment::create(
             $request->all()
         );
+
+        return redirect()->back();
     }
 
     /**
