@@ -3,6 +3,5 @@
     <label>Comment</label>
     <textarea name="text" class="uk-textarea uk-margin-bottom" rows="5"></textarea>
     <input name="article_id" type="hidden" value="{{ $article->id }}">
-    <input name="user_id" type="hidden" value="{{ auth()->user()->id }}">
     <button class="uk-button uk-button-primary" type="submit">Submit</button>
 </form>
