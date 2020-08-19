@@ -1,5 +1,8 @@
-<form action="" method="POST" class="">
+<form action="/comments" method="POST" class="">
+    @csrf
     <label>Comment</label>
     <textarea name="text" class="uk-textarea uk-margin-bottom" rows="5"></textarea>
+    <input name="post_id" type="hidden" value="{{ $article->id }}">
+    <input name="user_id" type="hidden" value="{{ auth()->user()->id }}">
     <button class="uk-button uk-button-primary" type="submit">Submit</button>
 </form>
