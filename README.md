@@ -7,4 +7,5 @@ Demo laravel application. Nobody knows, what it does.
 
 Very easy
 
-https://www.code-inspector.com/project/13230/score/svg
+![Code inspector](https://www.code-inspector.com/project/13230/score/svg)
+
