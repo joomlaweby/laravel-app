@@ -40,6 +40,8 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
+        $article->load('comments', 'comments.user');
+
         return view('articles.show', [
             'title' => 'Welcome',
             'article' => $article
