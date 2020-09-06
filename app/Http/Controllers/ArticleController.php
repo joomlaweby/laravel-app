@@ -12,7 +12,7 @@ class ArticleController extends Controller
     {
         return view('articles.index', [
             'title' => 'Welcome',
-            'articles' => Article::latest('id')->limit(5)->get()
+            'articles' => Article::with('comments', 'user')->latest('id')->limit(5)->get()
         ]);
 
     }
