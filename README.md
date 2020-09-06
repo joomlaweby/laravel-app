@@ -6,3 +6,5 @@ Demo laravel application. Nobody knows, what it does.
 #### How to install
 
 Very easy
+
+https://www.code-inspector.com/project/13230/score/svg

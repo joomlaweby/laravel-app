@@ -6,13 +6,9 @@
             <h1>{{$title}}</h1>
         </div>
 
-        <ol class="posts">
-            @foreach($articles as $article)
-                <li>
-                    @include('articles.article', [ 'type' => 'listing'])
-                </li>
-            @endforeach
-        </ol>
+        @foreach($articles as $article)
+            @include('articles.article', [ 'type' => 'listing'])
+        @endforeach
 
     </div>
 @endsection
