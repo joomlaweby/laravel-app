@@ -25,7 +25,9 @@
 @include('navigation')
     <main class="py-4 container">
         @yield('content')
+        <flash-message text="it really works!"></flash-message>
     </main>
+
 </div>
 </body>
 </html>
