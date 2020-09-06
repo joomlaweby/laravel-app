@@ -5,7 +5,7 @@
         <div class="title m-b-md">
             <h1>{{$title}}</h1>
         </div>
-        <table class="uk-table uk-table-divider">
+        <table class="uk-table uk-table-divider uk-table-striped uk-table-hover uk-table-small">
             <thead>
             <tr>
                 <th>ID</th>
