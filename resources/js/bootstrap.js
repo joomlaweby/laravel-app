@@ -1,4 +1,8 @@
-window._ = require('lodash');
+import lodash from 'lodash'
+import axios from 'axios'
+
+window._ = lodash;
+window.axios = axios;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
