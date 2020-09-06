@@ -1,5 +1,5 @@
 <template>
-    <div uk-alert class="notification uk-alert-success">
+    <div uk-alert class="notification uk-alert-success" v-show="visible">
         <a class="uk-alert-close" uk-close></a>
         <p>{{ text }}</p>
     </div>
@@ -11,16 +11,26 @@
 
         data() {
             return {
-                show: true
+                visible: true
             }
         },
 
         created() {
+            if(this.text) {
+                this.show();
+            }
+            else {
+                this.hide();
+            }
         },
 
         methods: {
             hide () {
-
+                this.visible = false;
+            },
+            show () {
+                this.visible = true;
+                setTimeout(() => this.hide(), 3000)
             }
         }
     }

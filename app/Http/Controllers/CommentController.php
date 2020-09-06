@@ -55,7 +55,7 @@ class CommentController extends Controller
             $request->all()
         );
 
-        return redirect()->back();
+        return redirect()->back()->with('flash', 'comment added');
     }
 
     /**
