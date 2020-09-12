@@ -6,7 +6,8 @@
         <h1>{{$title}}</h1>
     </div>
 
-<p>Hello, {{ $user->name }}</p>
+    <h3>{{ $user->name }}</h3>
+    <p><strong>Profile created:</strong> {{ $user->created_at->diffForHumans()}}</p>
 
 </div>
 @endsection
