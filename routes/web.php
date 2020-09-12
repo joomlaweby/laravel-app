@@ -23,10 +23,10 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/userprofile', 'UserController@profile')->name('Profile');
-
 Route::resource('articles', 'ArticleController');
 
 Route::resource('comments', 'CommentController');
 
 Route::resource('users', 'UserController');
+
+Route::resource('pages', 'PageController');
