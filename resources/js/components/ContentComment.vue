@@ -19,8 +19,13 @@ export default {
     },
 
     methods: {
+        textChanged() {
+            this.newText = this.$refs.input.innerText;
+        },
         updateComment() {
-            alert('Saved')
+            axios.put('/comments/' + this.commentData.id, {
+                text: this.newText
+            })
             this.editing = false
         },
 
