@@ -1,4 +1,4 @@
-<content-comment inline-template>
+<content-comment :comment-data="{{ $comment }}" inline-template>
     <article class="uk-comment">
         <header class="uk-comment-header">
             <div class="uk-grid-medium uk-flex-middle" uk-grid>
@@ -14,9 +14,10 @@
                         <li><a href="#">Reply</a></li>
                         @can('update', $comment)
                             <li><a href="#" @click="editing = true">Edit</a></li>
+                            <li><a href="#" @click="deleteComment">Delete</a></li>
                         @endcan
 
-                        <li><a href="#">Delete</a></li>
+
                     </ul>
                 </div>
             </div>
