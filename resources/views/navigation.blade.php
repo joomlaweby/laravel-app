@@ -38,6 +38,9 @@
                         </li>
                     @endif
                 @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">Users</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -50,7 +53,7 @@
                                 {{ __('Logout') }}
                             </a>
 
-                            <a class="dropdown-item" href="/userprofile">
+                            <a class="dropdown-item" href="/users/{{ Auth::user()->id }}">
                                 User profile
                             </a>
 
