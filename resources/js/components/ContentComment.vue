@@ -15,7 +15,7 @@ export default {
     },
 
     mounted() {
-        console.log(this.commentData);
+        this.newText = this.commentData.text
     },
 
     methods: {
