@@ -43,7 +43,7 @@ class ArticleController extends Controller
         $article->load('comments', 'comments.user');
 
         return view('articles.show', [
-            'title' => 'Welcome',
+            'title' => $article->title,
             'article' => $article
         ]);
     }
