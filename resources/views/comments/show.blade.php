@@ -12,13 +12,17 @@
                                 {{ $comment->created_at->diffForHumans() }}
                             </time></li>
                         <li><a href="#">Reply</a></li>
-                        <li><a href="#" @click="editing = true">Edit</a></li>
+                        @can('update', $comment)
+                            <li><a href="#" @click="editing = true">Edit</a></li>
+                        @endcan
+
                         <li><a href="#">Delete</a></li>
                     </ul>
                 </div>
             </div>
         </header>
         <div class="uk-comment-body">
+
             <p @blur="updateComment" @click="editing = true" :contenteditable="editing">{{ $comment->text }}</p>
         </div>
     </article>
