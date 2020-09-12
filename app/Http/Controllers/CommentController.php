@@ -89,7 +89,7 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $this->authorize('update', $comment);
     }
 
     /**
@@ -100,6 +100,6 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $this->authorize('delete', $comment);
     }
 }
