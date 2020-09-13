@@ -10,12 +10,14 @@ export default {
 
     data() {
         return {
-            editing: false
+            editing: false,
+            newText: '',
+            oldText: ''
         }
     },
 
     mounted() {
-        this.newText = this.commentData.text
+        this.oldText = this.newText = this.commentData.text
     },
 
     methods: {
@@ -27,6 +29,11 @@ export default {
                 text: this.newText
             })
             this.editing = false
+        },
+
+        resetText() {
+            this.editing = false
+            this.$refs.input.innerText = this.oldText
         },
 
         deleteComment() {

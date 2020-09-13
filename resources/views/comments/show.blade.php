@@ -24,7 +24,7 @@
         </header>
         <div class="uk-comment-body">
 
-            <div ref="input" @input="textChanged" @keydown.enter="updateComment" :contenteditable="editing">{{ $comment->text }}</div>
+            <div ref="input" @blur="resetText" @input="textChanged" @keydown.esc="resetText" @keydown.enter="updateComment" :contenteditable="editing">{{ $comment->text }}</div>
         </div>
     </article>
 </content-comment>
