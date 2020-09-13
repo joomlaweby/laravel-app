@@ -22,7 +22,7 @@
 <body>
 <div id="app">
 
-@include('navigation')
+    @include('navigation')
     <main class="py-4 container">
         @yield('content')
         <flash-message text="{{ session('flash') }}"></flash-message>

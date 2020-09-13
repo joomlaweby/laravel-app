@@ -10,12 +10,14 @@ export default {
 
     data() {
         return {
-            editing: false
+            editing: false,
+            newText: '',
+            oldText: ''
         }
     },
 
     mounted() {
-        this.newText = this.commentData.text
+        this.oldText = this.newText = this.commentData.text
     },
 
     methods: {
@@ -27,11 +29,35 @@ export default {
                 text: this.newText
             })
             this.editing = false
+            this.oldText = this.newText
+        },
+
+        resetText() {
+            this.editing = false
+            this.$refs.input.innerText = this.oldText
         },
 
         deleteComment() {
             axios.delete('/comments/' + this.commentData.id)
             this.$el.remove()
+        },
+
+        startEditing() {
+            this.editing = true
+            this.selectText()
+        },
+
+        selectText() {
+            setTimeout(() => {
+                let p = this.$refs.input,
+                    s = window.getSelection(),
+                    r = document.createRange()
+                r.setStart(p, 0)
+                r.setEnd(p, 1)
+                s.removeAllRanges()
+                s.addRange(r)
+                p.focus()
+            }, 0)
         }
     }
 }

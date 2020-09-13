@@ -13,7 +13,7 @@
                             </time></li>
                         <li><a href="#">Reply</a></li>
                         @can('update', $comment)
-                            <li><a @click="editing = true">Edit</a></li>
+                            <li><a @click="startEditing">Edit</a></li>
                             <li><a @click="deleteComment">Delete</a></li>
                         @endcan
 
@@ -24,7 +24,7 @@
         </header>
         <div class="uk-comment-body">
 
-            <div ref="input" @input="textChanged" @keydown.enter="updateComment" :contenteditable="editing">{{ $comment->text }}</div>
+            <div ref="input" @blur="resetText" @input="textChanged" @keydown.esc="resetText" @keydown.enter="updateComment" :contenteditable="editing">{{ $comment->text }}</div>
         </div>
     </article>
 </content-comment>
