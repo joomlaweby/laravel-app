@@ -29,6 +29,7 @@ export default {
                 text: this.newText
             })
             this.editing = false
+            this.oldText = this.newText
         },
 
         resetText() {
