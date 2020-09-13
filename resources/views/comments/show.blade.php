@@ -13,7 +13,7 @@
                             </time></li>
                         <li><a href="#">Reply</a></li>
                         @can('update', $comment)
-                            <li><a @click="editing = true">Edit</a></li>
+                            <li><a @click="startEditing">Edit</a></li>
                             <li><a @click="deleteComment">Delete</a></li>
                         @endcan
 
