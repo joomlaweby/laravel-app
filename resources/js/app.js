@@ -24,3 +24,7 @@ const app = new Vue({
         ContentComment
     }
 });
+
+function flash() {
+    console.log('flash');
+}

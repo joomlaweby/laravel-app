@@ -1,7 +1,7 @@
 <template>
     <div uk-alert class="notification uk-alert-success" v-show="visible">
         <a class="uk-alert-close" uk-close></a>
-        <p>{{ text }}&nbsp;</p>
+        <p>{{ this.message }}&nbsp;</p>
     </div>
 </template>
 
@@ -18,10 +18,11 @@
 
         created() {
             if(this.text) {
+                this.message = this.text
                 this.show()
             }
             this.$root.$on('flash', message => {
-                this.text = message
+                this.message = message
                 this.show()
             });
         },
