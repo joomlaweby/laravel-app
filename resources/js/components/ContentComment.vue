@@ -30,6 +30,7 @@ export default {
             })
             this.editing = false
             this.oldText = this.newText
+            this.$root.$emit('flash', 'Comment updated!')
         },
 
         resetText() {
