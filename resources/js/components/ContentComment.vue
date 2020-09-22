@@ -30,6 +30,7 @@ export default {
             })
             this.editing = false
             this.oldText = this.newText
+            this.$root.$emit('flash', 'Comment updated!')
         },
 
         resetText() {
@@ -38,6 +39,8 @@ export default {
         },
 
         deleteComment() {
+            this.$root.$emit('flash', 'Comment deleted!')
+
             axios.delete('/comments/' + this.commentData.id)
             this.$el.remove()
         },
