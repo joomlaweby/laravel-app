@@ -38,6 +38,8 @@ export default {
         },
 
         deleteComment() {
+            this.$root.$emit('flash', 'Comment deleted!')
+
             axios.delete('/comments/' + this.commentData.id)
             this.$el.remove()
         },

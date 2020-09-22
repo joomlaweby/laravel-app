@@ -11,17 +11,19 @@
 
         data() {
             return {
-                visible: true
+                visible: false,
+                message: ''
             }
         },
 
         created() {
             if(this.text) {
-                this.show();
+                this.show()
             }
-            else {
-                this.hide();
-            }
+            this.$root.$on('flash', message => {
+                this.text = message
+                this.show()
+            });
         },
 
         methods: {
