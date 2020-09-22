@@ -1,7 +1,7 @@
 <template>
     <div uk-alert class="notification uk-alert-success" v-show="visible">
         <a class="uk-alert-close" uk-close></a>
-        <p>{{ text }}</p>
+        <p>{{ text }}&nbsp;</p>
     </div>
 </template>
 
