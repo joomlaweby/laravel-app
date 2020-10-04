@@ -3,6 +3,7 @@
 /vendor/*
 .env
 package-lock.json
+yarn.lock
 logs/
 public/css/
 public/js/
