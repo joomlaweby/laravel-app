@@ -2,7 +2,6 @@
 /node_modules/*
 /vendor/*
 .env
-package-lock.json
 logs/
 public/css/
 public/js/
