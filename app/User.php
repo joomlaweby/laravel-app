@@ -11,6 +11,9 @@ use Illuminate\Notifications\Notifiable;
  *
  * @category User
  * @package  App
+ * @author   Miroslav Orincak
+ * @licence  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://www.gnu.org
  */
 class User extends Authenticatable
 {

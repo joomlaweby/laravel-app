@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @category Page
  * @package  App
+ * @author   Miroslav Orincak
+ * @licence  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://www.gnu.org
  */
 class Page extends Model
 {
