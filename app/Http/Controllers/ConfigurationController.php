@@ -64,13 +64,25 @@ class ConfigurationController extends Controller
     {
         $request->validate(
             [
-                'title' => 'required'
+                'title' => 'required',
+                'configuration' => 'required'
             ]
         );
-        auth()->user()->categories()->create(
-            $request->all()
-        );
+
+        $request->all();
 
         return redirect()->back()->with('flash', 'configuration added');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Configuration  $configuration
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Configuration $configuration)
+    {
+        $this->authorize('delete', $configuration);
+        $configuration->delete();
     }
 }
