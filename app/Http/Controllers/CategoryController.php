@@ -11,7 +11,7 @@ class CategoryController extends Controller
     {
         return view('categories.index', [
             'title' => 'Welcome',
-            'categories' => Category::all()->latest('id')->limit(50)->get()
+            'categories' => Category::all()
         ]);
 
     }
