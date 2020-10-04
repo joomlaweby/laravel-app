@@ -45,4 +45,44 @@ class ConfigurationController extends Controller
         $configuration->text = $request->text;
         $configuration->save();
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Request $request)
+    {
+        $request->validate(
+            [
+                'title' => 'required',
+                'configuration' => 'required'
+            ]
+        );
+
+        $request->all();
+
+        return redirect()->back()->with('flash', 'configuration added');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Configuration  $configuration
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Configuration $configuration)
+    {
+        $this->authorize('delete', $configuration);
+        $configuration->delete();
+    }
 }

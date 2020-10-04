@@ -1,6 +1,8 @@
 @extends('layouts.admin.master')
 
+
 @section('content')
+    @include('toolbar')
     <div class="content">
         <div class="title m-b-md">
             <h1>{{$title}}</h1>
@@ -10,6 +12,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Member since</th>
             </tr>
             </thead>
             <tbody>
@@ -20,6 +23,9 @@
                     </td>
                     <td>
                         <a href="/users/{{ $user->id }}">{{$user->name}}</a>
+                    </td>
+                    <td>
+                        {{$user->created_at}}
                     </td>
                 </tr>
             @endforeach
