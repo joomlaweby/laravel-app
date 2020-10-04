@@ -45,4 +45,32 @@ class ConfigurationController extends Controller
         $configuration->text = $request->text;
         $configuration->save();
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Request $request)
+    {
+        $request->validate(
+            [
+                'title' => 'required'
+            ]
+        );
+        auth()->user()->categories()->create(
+            $request->all()
+        );
+
+        return redirect()->back()->with('flash', 'configuration added');
+    }
 }
