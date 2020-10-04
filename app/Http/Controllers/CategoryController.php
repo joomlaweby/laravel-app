@@ -43,7 +43,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'title' => 'required'
+            ]
+        );
+        auth()->user()->categories()->create(
+            $request->all()
+        );
+
+        return redirect()->back()->with('flash', 'category added');
     }
 
     /**
