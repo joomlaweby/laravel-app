@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Page
  *
- * @category  Page
+ * @category Page
  * @package  App
  */
 class Page extends Model

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Category
  *
  * @category Category
- * @package App
+ * @package  App
  *
  */
 class Category extends Model

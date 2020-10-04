@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
  * Class CategoryController
  *
  * @category CategoryController
- * @package App\Http\Controllers
+ * @package  App\Http\Controllers
  */
 class CategoryController extends Controller
 {
