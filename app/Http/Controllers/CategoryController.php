@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('categories.index', [
@@ -16,6 +19,10 @@ class CategoryController extends Controller
 
     }
 
+    /**
+     * @param Category $category
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(Category $category)
     {
 

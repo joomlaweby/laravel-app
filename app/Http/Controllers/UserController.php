@@ -7,6 +7,9 @@ use App\User;
 
 class UserController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('users.index', [
@@ -16,6 +19,10 @@ class UserController extends Controller
 
     }
 
+    /**
+     * @param User $user
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(User $user)
     {
         return view('users.show', [
@@ -24,6 +31,10 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * @param User $user
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     function profile(User $user) {
         return view('userprofile', [
             'title' => 'User profile',
