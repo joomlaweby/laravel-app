@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('articles.index', [
