@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
  * @category CategoryController
  * @package  App\Http\Controllers
  * @author   Miroslav Orincak <username@example.com>
- * @licence  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     http://www.gnu.org
  */
 class CategoryController extends Controller
