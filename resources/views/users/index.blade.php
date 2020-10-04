@@ -31,7 +31,10 @@
             @endforeach
             </tbody>
         </table>
-
+{{--        @dump($nav_links)--}}
+        @foreach($nav_links as $path)
+        <p>{{$path}}</p>
+        @endforeach
 
     </div>
 @endsection

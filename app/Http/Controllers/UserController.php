@@ -12,7 +12,7 @@ class UserController extends Controller
         $paths = [];
 
         foreach (\Route::getRoutes() as $route) {
-            if ($route->getMethods()[0] !== 'GET') continue;
+            if ($route->getActionMethod()[0] !== 'GET') continue;
 
             $path = $route->getPath();
 
@@ -20,7 +20,7 @@ class UserController extends Controller
         }
 
         $paths = array_unique($paths);
-        view()->share('nav-links', $paths);
+        view()->share('nav_links', $paths);
     }
 
 
