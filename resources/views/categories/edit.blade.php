@@ -13,7 +13,7 @@
             <label>Slug</label>
             <input type="text" required class="uk-input uk-margin-bottom" name="slug" value="@if (isset($category)){{$category->slug}}@endif">
             <label>Text</label>
-            <textarea name="text" class="uk-textarea">
+            <textarea name="text" class="uk-textarea" rows="15">
                 @if (isset($category)){{$category->slug}}@endif
             </textarea>
             <button class="uk-button uk-margin uk-button-primary" type="submit">Submit</button>
