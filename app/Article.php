@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Article
  *
- * @category  Article
- * @package  App
+ * @category Article
+ * @package App
  */
 class Article extends Model
 {
