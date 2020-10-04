@@ -17,4 +17,8 @@ class Article extends Model
     public function comments() {
         return $this->hasMany('App\Comment')->latest();
     }
+
+    public function category() {
+        return $this->belongsTo('App\Category');
+    }
 }
