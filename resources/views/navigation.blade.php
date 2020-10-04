@@ -48,6 +48,9 @@
                         <a class="nav-link" href="/admin/articles">Articles</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/admin/tags">Tags</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/users">Users</a>
                     </li>
                     <li class="nav-item dropdown">

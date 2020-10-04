@@ -1,5 +1,4 @@
-@extends('layouts.admin.master')
-
+@extends('layouts.master')
 
 @section('content')
     @include('toolbar')
@@ -7,34 +6,31 @@
         <div class="title m-b-md">
             <h1>{{$title}}</h1>
         </div>
+
         <table class="uk-table uk-table-divider uk-table-striped uk-table-hover uk-table-small">
             <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Member since</th>
+                <th>Created</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($users as $user)
+            @foreach($tags as $tag)
                 <tr>
                     <td>
-                        {{$user->id}}
+                        {{$tag->id}}
                     </td>
                     <td>
-                        <a href="/users/{{ $user->id }}">{{$user->name}}</a>
+                        <a href="/categories/{{ $tag->slug }}/edit">{{$tag->title}}</a>
                     </td>
                     <td>
-                        {{$user->created_at}}
+                        {{$tag->created_at}}
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
-{{--        @dump($nav_links)--}}
-        @foreach($nav_links as $path)
-        <p>{{$path}}</p>
-        @endforeach
 
     </div>
 @endsection

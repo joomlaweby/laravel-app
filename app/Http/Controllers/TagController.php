@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
 use Illuminate\Http\Request;
+use App\Tag;
 
-class ArticleController extends Controller
+class TagController extends Controller
 {
-
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        return view('articles.index', [
-            'title' => 'Latest articles',
-            'articles' => Article::with('comments', 'user')->latest('id')->limit(5)->get()
+        return view('layouts.admin.tags.index', [
+            'title' => 'Tags',
+            'tags' => Tag::latest('id')->limit(50)->get()
         ]);
-
     }
 
     /**
@@ -41,23 +39,24 @@ class ArticleController extends Controller
         //
     }
 
-    public function show(Article $article)
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
-        $article->load('comments', 'comments.user');
-
-        return view('articles.show', [
-            'title' => $article->title,
-            'article' => $article
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit($id)
     {
         //
     }
@@ -66,10 +65,10 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Article  $article
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,10 +76,10 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Article  $article
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy($id)
     {
         //
     }

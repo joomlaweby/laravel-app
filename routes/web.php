@@ -34,3 +34,7 @@ Route::resource('pages', 'PageController');
 Route::resource('categories', 'CategoryController');
 
 Route::resource('configuration', 'ConfigurationController');
+
+Route::resource('tags', 'TagController');
+
+Route::resource('admin/tags', 'TagController');
