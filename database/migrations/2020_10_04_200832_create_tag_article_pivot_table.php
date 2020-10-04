@@ -14,7 +14,6 @@ class CreateTagArticlePivotTable extends Migration
     public function up()
     {
         Schema::create('tag_article', function (Blueprint $table) {
-            $table->id();
             $table->integer('tag_id');
             $table->integer('article_id');
             $table->timestamps();
