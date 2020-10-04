@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 /**
  * Class CategoryController
@@ -52,10 +53,8 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -89,15 +88,27 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Category $category
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate(
+            [
+                'title' => 'required',
+                'slug' => 'required'
+            ]
+        );
+
+        $category = Category::find('category_id');
+        $category->title = $request->get('title');
+        $category->slug = $request->get('slug', '');
+        $category->text = $request->get('text', '');
+        $category->user_id = auth()->user()->id;
+        $category->save();
+
+        return redirect()->back()->with('flash', 'Category updated');
     }
 
     /**

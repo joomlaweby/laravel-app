@@ -7,6 +7,23 @@ use App\User;
 
 class UserController extends Controller
 {
+
+    public function __construct() {
+        $paths = [];
+
+        foreach (\Route::getRoutes() as $route) {
+            if ($route->getMethods()[0] !== 'GET') continue;
+
+            $path = $route->getPath();
+
+            $paths[$path] = $path === '/' ? 'Home' : ucfirst($path);
+        }
+
+        $paths = array_unique($paths);
+        view()->share('nav-links', $paths);
+    }
+
+
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

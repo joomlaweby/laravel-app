@@ -22,7 +22,7 @@
                         {{$category->id}}
                     </td>
                     <td>
-                        <a href="/categories/{{ $category->id }}">{{$category->title}}</a>
+                        <a href="/categories/{{ $category->slug }}/edit">{{$category->title}}</a>
                     </td>
                     <td>
                         {{$category->created_at}}
