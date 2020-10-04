@@ -11,7 +11,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('articles.index', [
-            'title' => 'Welcome',
+            'title' => 'Latest articles',
             'articles' => Article::with('comments', 'user')->latest('id')->limit(5)->get()
         ]);
 

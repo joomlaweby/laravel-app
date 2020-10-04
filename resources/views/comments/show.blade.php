@@ -8,16 +8,18 @@
                 <div class="uk-width-expand">
                     <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="/users/{{ $comment->user->id }}">{{ $comment->user->name }}</a></h4>
                     <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                        <li><time datetime="{{ $comment->created_at->toW3cString() }}" class="text-muted">
+                        <li>
+                            <time datetime="{{ $comment->created_at->toW3cString() }}" class="text-muted">
                                 {{ $comment->created_at->diffForHumans() }}
-                            </time></li>
-                        <li><a href="#">Reply</a></li>
+                            </time>
+                        </li>
+                        <li>
+                            <a href="#">Reply</a>
+                        </li>
                         @can('update', $comment)
                             <li><a @click="startEditing">Edit</a></li>
                             <li><a @click="deleteComment">Delete</a></li>
                         @endcan
-
-
                     </ul>
                 </div>
             </div>

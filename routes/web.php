@@ -30,3 +30,5 @@ Route::resource('comments', 'CommentController');
 Route::resource('users', 'UserController');
 
 Route::resource('pages', 'PageController');
+
+Route::resource('categories', 'CategoryController');
