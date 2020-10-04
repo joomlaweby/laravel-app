@@ -32,3 +32,5 @@ Route::resource('users', 'UserController');
 Route::resource('pages', 'PageController');
 
 Route::resource('categories', 'CategoryController');
+
+Route::resource('configuration', 'ConfigurationController');
