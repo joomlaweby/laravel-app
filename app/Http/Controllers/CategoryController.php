@@ -61,7 +61,8 @@ class CategoryController extends Controller
     {
         $request->validate(
             [
-                'title' => 'required'
+                'title' => 'required',
+                'slug' => 'required'
             ]
         );
 
@@ -72,7 +73,7 @@ class CategoryController extends Controller
         $category->user_id = auth()->user()->id;
         $category->save();
 
-        return redirect()->back()->with('flash', 'category added');
+        return redirect()->back()->with('flash', 'Category added');
     }
 
     /**
