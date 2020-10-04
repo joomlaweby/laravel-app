@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Comment
  *
- * @package App
+ * @category  Comment
+ * @package  App
  */
 class Comment extends Model
 {
