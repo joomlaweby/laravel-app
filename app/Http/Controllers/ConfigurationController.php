@@ -8,14 +8,15 @@ use App\Configuration;
 class ConfigurationController extends Controller
 {
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Configuration  $configuration
-     * @return \Illuminate\Http\Response
+     * @param Configuration $configuration
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(Configuration $configuration)
     {
-        //
+        return view('configuration.show', [
+            'title' => 'Configuration',
+            'configuration' => $configuration
+        ]);
     }
 
     /**
