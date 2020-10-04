@@ -42,13 +42,13 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-
+        return view('categories.edit', [
+            'title' => 'Add new category'
+        ]);
     }
 
     /**
@@ -64,22 +64,27 @@ class CategoryController extends Controller
                 'title' => 'required'
             ]
         );
-        auth()->user()->categories()->create(
-            $request->all()
-        );
+
+        $category = new Category;
+        $category->title = $request->get('title');
+        $category->slug = $request->get('slug', '');
+        $category->text = $request->get('text', '');
+        $category->user_id = auth()->user()->id;
+        $category->save();
 
         return redirect()->back()->with('flash', 'category added');
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
+     * @param Category $category
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', [
+            'title' => $category->title,
+            'category' => $category
+        ]);
     }
 
     /**
