@@ -46,11 +46,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function articles() {
         return $this->hasMany('App\Article');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function comments() {
         return $this->hasMany('App\Comment');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function usergroup() {
+        return $this->belongsTo('App\Usergroup');
     }
 }
