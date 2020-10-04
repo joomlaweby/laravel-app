@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+    @include('toolbar')
     <div class="content">
         <div class="title m-b-md">
             <h1>{{$title}}</h1>
