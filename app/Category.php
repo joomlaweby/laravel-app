@@ -27,6 +27,6 @@ class Category extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function articles() {
-        return $this->hasMany('App\Article')->latest();
+        return $this->hasMany('App\Article');
     }
 }
