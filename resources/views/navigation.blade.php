@@ -10,7 +10,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-
+{{--                @foreach($nav_links as $path => $name)--}}
+{{--                    <li>--}}
+{{--                        <a href="{{ URL::to($route->getPath()) }}">{{ $route->getPath() }}</a>--}}
+{{--                    </li>--}}
+{{--                @endforeach--}}
             </ul>
 
             <!-- Right Side Of Navbar -->

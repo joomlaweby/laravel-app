@@ -7,20 +7,7 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function __construct() {
-        $paths = [];
 
-        foreach (\Route::getRoutes() as $route) {
-            if ($route->getMethods()[0] !== 'GET') continue;
-
-            $path = $route->getPath();
-
-            $paths[$path] = $path === '/' ? 'Home' : ucfirst($path);
-        }
-
-        $paths = array_unique($paths);
-        view()->share('nav-links', $paths);
-    }
     /**
      * Show the form for creating a new resource.
      *

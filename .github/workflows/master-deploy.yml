@@ -47,19 +47,25 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+
+  laravel-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
       # Runs deploy
-    - name: Deploy application
-      uses: appleboy/ssh-action@master
-      with:
-        host: shellserver-2.websupport.sk
-        username: uid56720
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd joomla-webstranky.sk/sub/laravel
-          git checkout --force master
-          git pull origin master
-          composer install
-          npm install
-          npm run production
-          php artisan migrate
+      - name: Deploy application
+        uses: appleboy/ssh-action@master
+        with:
+          host: shellserver-2.websupport.sk
+          username: uid56720
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd joomla-webstranky.sk/sub/laravel
+            git checkout --force master
+            git pull origin master
+            composer install
+            npm install
+            npm run production
+            php artisan migrate
