@@ -3,7 +3,7 @@
 @section('content')
     <div class="content">
         <div class="title m-b-md">
-            <h1 class="">{{$title}}</h1>
+            <h1 class="test">{{$title}}</h1>
         </div>
 
 <form action="/configuration" method="POST" class="">
