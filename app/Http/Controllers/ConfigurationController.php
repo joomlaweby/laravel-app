@@ -63,7 +63,7 @@ class ConfigurationController extends Controller
     public function store(Request $request)
     {
 
-        $request->validateWithBag('errors', [
+        $errors = $request->validateWithBag('configuration', [
             'sitename' => 'required|string'
         ]);
 

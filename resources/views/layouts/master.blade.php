@@ -24,6 +24,7 @@
 
 @include('navigation')
     <main class="py-4 container">
+
         @if ($errors->any())
             @include('layouts.errors')
         @endif

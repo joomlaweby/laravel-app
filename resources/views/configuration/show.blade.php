@@ -6,7 +6,6 @@
             <h1 class="test">{{$title}}</h1>
         </div>
 
-
         {!! Form::open(['url' => '/configuration', 'method' => 'post']) !!}
 
         {!! Form::label('sitename', 'Site name') !!}
