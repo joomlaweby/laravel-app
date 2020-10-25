@@ -68,6 +68,13 @@ class ConfigurationController extends Controller
             ]
         );
 
+        $configuration = new Configuration;
+
+        $configuration->title = $request->get('sitename');
+        $configuration->context = 'global';
+        $configuration->configuration = '{}';
+        $configuration->save();
+
         $request->all();
 
         return redirect()->back()->with('flash', 'configuration added');
