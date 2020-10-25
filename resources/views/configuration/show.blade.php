@@ -6,13 +6,13 @@
             <h1 class="test">{{$title}}</h1>
         </div>
 
-<form action="/configuration" method="POST" class="">
-    @csrf
-    <label>Site name</label>
-    <input name="configuration_configuration" class="uk-input" value="{{ $configuration[0]->configuration }}">
-    <input name="configuration_id"  type="hidden" value="{{ $configuration[0]->id }}">
-    <button class="uk-button uk-button-primary" type="submit">Submit</button>
-</form>
+
+        {!! Form::open(['url' => '/contact']) !!}
+
+        {!! Form::label('sitename', 'Site name') !!}
+
+        {!! Form::close() !!}
+
 
     </div>
 @endsection
