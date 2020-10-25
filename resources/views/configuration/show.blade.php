@@ -17,7 +17,7 @@
 
         {!! Form::label('metadescription', 'Site meta description') !!}
         {!! Form::textarea('metadescription', null, ['class' => 'uk-textarea']) !!}
-
+        {!! Form::submit('Submit', ['class' => 'uk-button uk-button-default uk-button-primary uk-margin-top']) !!}
         {!! Form::close() !!}
 
 
