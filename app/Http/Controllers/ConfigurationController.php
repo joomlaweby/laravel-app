@@ -69,7 +69,7 @@ class ConfigurationController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return back()->withInput();
+            return back()->withErrors($validator)->withInput();
         }
 
         $configuration = new Configuration;
