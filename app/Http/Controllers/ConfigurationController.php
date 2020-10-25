@@ -64,7 +64,7 @@ class ConfigurationController extends Controller
     {
         $request->validate(
             [
-                'sitename' => 'required'
+                'sitename' => 'required|string'
             ]
         );
 
