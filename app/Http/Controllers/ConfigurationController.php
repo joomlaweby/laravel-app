@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Configuration;
+use Illuminate\Validation\Validator;
 
 class ConfigurationController extends Controller
 {
@@ -62,11 +63,14 @@ class ConfigurationController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
-            [
-                'sitename' => 'required|string'
-            ]
-        );
+
+        $validator = Validator::make($request->all(), [
+            'sitename' => 'required|string'
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withInput();
+        }
 
         $configuration = new Configuration;
 
