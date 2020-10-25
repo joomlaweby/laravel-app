@@ -19,4 +19,15 @@ class PagesTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /**
+     * @depends testContactPageIsAvailable
+     * @return void
+     */
+    public function testPageViewContainsVitaj()
+    {
+        $view = $this->view('pages.admin.index', ['title' => 'Vitaj']);
+
+        $view->assertSee('Vitaj');
+    }
 }
