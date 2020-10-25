@@ -1,4 +1,4 @@
-
+{!! dd($errors) !!}
 <div class="uk-alert-danger">
     <ul>
         @foreach ($errors->all() as $error)
