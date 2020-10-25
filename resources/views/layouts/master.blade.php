@@ -24,6 +24,10 @@
 
 @include('navigation')
     <main class="py-4 container">
+
+        @if ($errors->any())
+            @include('layouts.errors')
+        @endif
         @yield('content')
         <flash-message text="{{ session('flash') }}"></flash-message>
     </main>

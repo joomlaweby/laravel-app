@@ -62,12 +62,17 @@ class ConfigurationController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
-            [
-                'title' => 'required',
-                'configuration' => 'required'
-            ]
-        );
+
+        $request->validateWithBag('configuration', [
+            'sitename' => 'required|string'
+        ]);
+
+        $configuration = new Configuration;
+
+        $configuration->title = $request->get('sitename');
+        $configuration->context = 'global';
+        $configuration->configuration = '{}';
+        $configuration->save();
 
         $request->all();
 
@@ -84,5 +89,15 @@ class ConfigurationController extends Controller
     {
         $this->authorize('delete', $configuration);
         $configuration->delete();
+    }
+
+    /**
+     * @param Configuration $configuration
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit(Configuration $configuration) {
+        return view('configuration.show', [
+            'sitename' => $configuration->title
+        ]);
     }
 }

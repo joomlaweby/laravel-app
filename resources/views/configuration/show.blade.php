@@ -6,13 +6,19 @@
             <h1 class="test">{{$title}}</h1>
         </div>
 
-<form action="/configuration" method="POST" class="">
-    @csrf
-    <label>Site name</label>
-    <input name="configuration_configuration" class="uk-input" value="{{ $configuration[0]->configuration }}">
-    <input name="configuration_id"  type="hidden" value="{{ $configuration[0]->id }}">
-    <button class="uk-button uk-button-primary" type="submit">Submit</button>
-</form>
+        {!! Form::open(['url' => '/configuration', 'method' => 'post']) !!}
+
+        {!! Form::label('sitename', 'Site name') !!}
+        {!! Form::text('sitename', null, ['class' => 'uk-input']) !!}
+
+        {!! Form::label('metakeywords', 'Site meta keywords') !!}
+        {!! Form::text('metakeywords', null, ['class' => 'uk-input']) !!}
+
+        {!! Form::label('metadescription', 'Site meta description') !!}
+        {!! Form::textarea('metadescription', null, ['class' => 'uk-textarea']) !!}
+        {!! Form::submit('Submit', ['class' => 'uk-button uk-button-default uk-button-primary uk-margin-top']) !!}
+        {!! Form::close() !!}
+
 
     </div>
 @endsection

@@ -3,7 +3,7 @@
     <ol class="tag-list">
         @foreach($article->tags as $tag)
             <li>
-                @include('tags.show')
+                @include('tags.edit')
             </li>
         @endforeach
     </ol>
