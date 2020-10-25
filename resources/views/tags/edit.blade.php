@@ -8,7 +8,7 @@
 
         {!! Form::open(['url' => '/admin/tags', 'method' => 'post']) !!}
 
-        {!! Form::label('name', 'Site name') !!}
+        {!! Form::label('name', 'Tag') !!}
         {!! Form::text('name', null, ['class' => 'uk-input']) !!}
 
         {!! Form::submit('Submit', ['class' => 'uk-button uk-button-default uk-button-primary uk-margin-top']) !!}
