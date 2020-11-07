@@ -2,3 +2,9 @@ language: php
 php:
   - 7.3
   - hhvm
+
+before_script:
+  - composer install
+  - npm install
+  - npm run production
+  - php artisan migrate
