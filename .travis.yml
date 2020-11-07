@@ -7,6 +7,7 @@ before_script:
   - php -r "file_exists('.env') || copy('.env.master', '.env');"
   - composer install -q --no-interaction
   - chmod -R 777 storage bootstrap/cache
+  - php artisan migrate --no-interaction -vvv
   - |
     - mkdir -p database
     - touch database/database.sqlite
