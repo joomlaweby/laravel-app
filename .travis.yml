@@ -4,7 +4,13 @@ php:
   - hhvm
 
 before_script:
-  - composer install
-  - npm install
-  - npm run production
-  - php artisan migrate
+  - php -r "file_exists('.env') || copy('.env.master', '.env');"
+  - composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+  - php artisan key:generate
+  - chmod -R 777 storage bootstrap/cache
+  - |
+    - mkdir -p database
+    - touch database/database.sqlite
+env:
+  - DB_CONNECTION=sqlite
+  - DB_DATABASE=database/database.sqlite
