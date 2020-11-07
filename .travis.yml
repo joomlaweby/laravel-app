@@ -9,8 +9,8 @@ before_script:
   - chmod -R 777 storage bootstrap/cache
   - php artisan migrate --no-interaction -vvv
   - |
-    - mkdir -p database
-    - touch database/database.sqlite
+    mkdir -p database
+    touch database/database.sqlite
 env:
   - DB_CONNECTION=sqlite
   - DB_DATABASE=database/database.sqlite
