@@ -23,6 +23,8 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/tunes', 'TunesController@index')->name('home');
+
 Route::resource('articles', 'ArticleController');
 
 Route::resource('comments', 'CommentController');

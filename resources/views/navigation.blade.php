@@ -28,6 +28,9 @@
                         <a class="nav-link" href="/articles">Articles</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/tunes">iTunes</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('about') }}">About</a>
                     </li>
                     <li class="nav-item">
@@ -50,6 +53,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/articles">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tunes">iTunes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/tags">Tags</a>
