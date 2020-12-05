@@ -40,12 +40,17 @@ export default {
         return {
             query: '',
             songs: [],
-            limit: 9
+            defaultLimit: 9
         }
+    },
+    props: {
+        limit: String
     },
     methods: {
         getMusic() {
-            axios.get(`https://itunes.apple.com/search?term=${encodeURI(this.query)}&entity=musicTrack&limit=${this.limit}`)
+
+            var countedLimit = this.$props.limit || this.defaultLimit;
+            axios.get(`https://itunes.apple.com/search?term=${encodeURI(this.query)}&entity=musicTrack&limit=${countedLimit}`)
                 .then(response => {
                     // handle success
                     this.songs = [];
