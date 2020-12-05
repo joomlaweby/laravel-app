@@ -46,6 +46,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $attributes = [
+        'usergroup_id' => 0,
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
