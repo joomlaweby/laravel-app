@@ -6,9 +6,28 @@
             <input class="uk-input" placeholder="search for song" v-model="query" type="text">
         </form>
 
-        <div v-for="song in songs" :key="song.id">
-            <h2>{{ song.name }}</h2>
-            <p><strong>{{ song.artist }}</strong> - {{ song.album }}</p>
+
+        <div  class="uk-child-width-1-3@m uk-grid-small uk-grid-match uk-margin" uk-grid>
+            <div v-for="song in songs" :key="song.id">
+                <div class="uk-card uk-card-primary uk-card-default uk-card-body uk-card-hover">
+                    <div class="uk-card-media-top">
+                        <img :src="song.cover" alt="">
+                    </div>
+                    <h2 class="uk-card-title">{{ song.name }}</h2>
+                    <p><strong>{{ song.artist }}</strong> - {{ song.album }}</p>
+                    <div>
+                        <figure v-if="song.audioFile">
+                            <audio
+                                controls
+                                :src="song.audioFile">
+                                Your browser does not support the
+                                <code>audio</code> element.
+                            </audio>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </template>
@@ -21,7 +40,7 @@ export default {
         return {
             query: '',
             songs: [],
-            limit: 5
+            limit: 9
         }
     },
     methods: {
@@ -49,6 +68,7 @@ export default {
                         artworkUrl100: cover,
                         collectionName: album
                     }) {
+
             return {artist, name, id, audioFile, cover, album};
         }
     }
