@@ -22,7 +22,9 @@ jobs:
           script: |
             cd joomla-webstranky.sk/sub/laravel
             git checkout --force master
-            git pull origin master
+            git fetch origin master
+            git reset --hard FETCH_HEAD
+            git clean -df
             composer install
             npm install
             npm run production
