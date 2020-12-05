@@ -20,15 +20,16 @@ export default {
     data() {
         return {
             query: '',
-            songs: []
+            songs: [],
+            limit: 5
         }
     },
     methods: {
         getMusic() {
-            axios.get(`https://itunes.apple.com/search?term=${encodeURI(this.query)}&entity=musicTrack&limit=5`)
+            axios.get(`https://itunes.apple.com/search?term=${encodeURI(this.query)}&entity=musicTrack&limit=${this.limit}`)
                 .then(response => {
                     // handle success
-
+                    this.songs = [];
                     response.data.results.forEach(song => {
                         if (song.kind == 'song') {
                             this.songs.push(this.extractData(song));
