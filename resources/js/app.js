@@ -9,6 +9,7 @@ import 'uikit';
 import Vue from 'vue'
 import FlashMessage from "./components/FlashMessage";
 import ContentComment from "./components/ContentComment";
+import Card from "./components/Card";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -21,7 +22,8 @@ const app = new Vue({
     el: '#app',
     components: {
         FlashMessage,
-        ContentComment
+        ContentComment,
+        Card
     }
 });
 
