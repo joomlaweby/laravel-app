@@ -1,6 +1,6 @@
 <template>
     <form action="#" @submit.prevent="getMusic()">
-        <input class="uk-input" placeholder="search for song" v-model="query" type="text">
+        <input class="uk-input" ref="searchInput" placeholder="search for song" v-model="query" type="text">
     </form>
 </template>
 
@@ -47,6 +47,9 @@ export default {
 
             return {artist, name, id, audioFile, cover, album};
         }
+    },
+    mounted() {
+        this.$refs.searchInput.focus();
     }
 
 }
