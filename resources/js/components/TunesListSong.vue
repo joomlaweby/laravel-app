@@ -7,7 +7,7 @@
                 </div>
                 <h2 class="uk-card-title">{{ song.name }}</h2>
                 <h4 class="uk-margin-remove">{{ song.artist }}</h4>
-                <p>{{ song.album }}</p>
+                <p>{{ song.album | shorten }}</p>
                 <div>
                     <figure v-if="song.audioFile">
                         <audio
@@ -26,12 +26,22 @@
 </template>
 
 <script>
+import {truncate} from 'lodash-es';
+
 export default {
-props: {
-    song: {
-        type: Object
+    props: {
+        song: {
+            type: Object
+        }
+    },
+    filters: {
+        shorten(str, len = 55) {
+            return truncate(str, {length: len})
+        },
+        songify(song) {
+            return song.artist + ' - ' + song.name
+        }
     }
-}
 }
 </script>
 
@@ -41,6 +51,6 @@ props: {
 }
 
 .fade-enter-active {
-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 </style>
