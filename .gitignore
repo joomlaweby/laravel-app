@@ -5,7 +5,7 @@
 logs/
 public/css/
 public/js/
-public/admin/
+public/backend/
 *.cache
 /laradock/*
 !/laradock/.env
