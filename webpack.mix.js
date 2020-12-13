@@ -12,5 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/admin/app.js', 'public/admin/js')
     .sass('resources/sass/app/app.scss', 'public/css')
+    .sass('resources/sass/admin/app.scss', 'public/admin/css')
     .disableSuccessNotifications();
