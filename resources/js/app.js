@@ -7,10 +7,10 @@
 import './bootstrap';
 import 'uikit';
 import Vue from 'vue'
-import FlashMessage from "./components/FlashMessage";
-import ContentComment from "./components/ContentComment";
-import Card from "./components/Card";
-import Tunes from "./components/Tunes";
+import FlashMessage from "./app/components/FlashMessage";
+import ContentComment from "./app/components/ContentComment";
+import Card from "./app/components/Card";
+import Tunes from "./app/components/Tunes";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -41,6 +41,6 @@ Route::resource('tags', 'TagController');
 
 Route::resource('admin/tags', 'TagController');
 
-Route::get('/admin', function () {
+Route::get('/admin/{any?}', function () {
     return view('layouts.admin.master', ['title' => 'Backend']);
-});
+})->where('any', '.*');
